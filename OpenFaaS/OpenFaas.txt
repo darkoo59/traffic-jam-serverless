@@ -1,0 +1,37 @@
+minikube start (kreira docker container???)
+minikube dahsboard
+
+2) RUN OPENFAAS INTO THE CLUSTER
+arkade install openfaas
+kubectl -n openfaas get deployments -l "release=openfaas, app=openfaas"
+curl -SLsf https://cli.openfaas.com | sh	(Installl openfaas cli)
+kubectl rollout status -n openfaas deploy/gateway 	(chcecks our gateway deplyment)
+
+kubectl port-forward -n openfaas svc/gateway 8080:8080 &
+
+PASSWORD=$(kubectl get secret -n openfaas basic-auth -o jsonpath="{.data.basic-auth-password}" | base64 --decode; echo)
+echo -n $PASSWORD | faas-cli login --username admin --password-stdin	(GENERISANJE SIFRE ZA OPENFAAS CLI)
+
+echo $PASSWORD (DOBAVLJANJE SIFRE)
+
+...(POKRETANJE RANDOM FUNKCIJA IZ NJIHOVOG TEMPLATE STORA)
+
+	KREIRANJE NASIH FUNKCIJA 
+
+-Otvaranje gitbasha u folderu gde hocemo da dobavimo template za pisanje nase funkcije
+export OPENFAAS_PREFIX=darkoo59   (PODESAVANJE PREFIXA - postavaljanje kao naziv usera na win)
+
+faas-cli new --lang python3 helloworld (komanda varira u zavisnosti od jezika)
+
+FUNKCIJA SE PISE U HANDLER FAJLU
+
+faas-cli build -f helloworld.yml	(Buildanje docker containera nakon odradjene biznis logike)
+
+faas-cli push -f helloworld.yml	   (Pushanje na docker repo(ulogovani smo vec na docker))
+
+faas-cli deploy -f helloworld.yml  (deplojovanje projekta(funkcije))
+
+Na minicube dashboardu vidimo da je dodat Pod koji se odnosi na nasu deployovanu funkciju
+Takodje to isto vidimo i na openfaas cli
+
+faas-cli up -f helloworld.yml	(nakon update-a koda ova funkcija updateuje deployovanu verziju)

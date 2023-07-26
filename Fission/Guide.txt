@@ -1,0 +1,15 @@
+fission environment create --name python --image fission/python-env	(kreiranje environmenta za python)
+Kreiranje python fajla(sa funkcijom)
+fission function create --name hello --env python --code hello.py (kreiranje funkcije)
+fission function test --name hello		=>	vraca hello world
+
+export FISSION_ROUTER=$(minikube ip):$(kubectl -n fission get svc router -o jsonpath='{...nodePort}')	(kako bi mogli da pogodimo requestom (postman npr))
+
+kubectl --namespace fission port-forward $(kubectl --namespace fission get pod -l svc=router -o name) 8888:8888 &	(RADIMO PORT FORWARDING NA http://localhost:8888)\
+
+SADA MOZEMO DA GADJAMO REQUESTOVIMA
+
+UTILS:
+	fission route list
+
+	

@@ -1,0 +1,7 @@
+Kuberneetes:
+	Instalacija kubernetes-a
+	Dodavanje environment varaible za kubernewetes
+	Startovanje clustera : minikube start (Docker pokrenut)
+	Otvaranje kubernetes dashboarda : minikube dashboard
+
+https://medium.com/@JockDaRock/openfaas-on-minikube-serverless-on-kubernetes-for-windows-10-3c7c7d68f47f
