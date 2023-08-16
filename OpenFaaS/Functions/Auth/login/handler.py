@@ -2,15 +2,20 @@ from flask import Flask, request
 import json
 import psycopg2
 from werkzeug.security import check_password_hash
+import jwt
 
 app = Flask(__name__)
 
+def generate_access_token(email, role):
+    payload = {'email': email, 'role': role}
+    return jwt.encode(payload, "secret", algorithm="HS256")
+
 def login_user():
     data = request.get_json()
-    username = data.get('username')
+    email = data.get('email')
     password = data.get('password')
 
-    if not username or not password:
+    if not email or not password:
         return json.dumps({'status': 400, 'message': 'Missing required data'})
 
     conn = psycopg2.connect(
@@ -21,16 +26,18 @@ def login_user():
         password="postgres"
     )
     cursor = conn.cursor()
-    cursor.execute("SELECT password FROM users WHERE username = %s", (username,))
-    hashed_password = cursor.fetchone()
+    cursor.execute("SELECT password, role FROM users WHERE email = %s", (email,))
+    user_data = cursor.fetchone()
 
     conn.close()
-    if not hashed_password:
+    if not user_data:
         # User does not exist in the database
         return json.dumps({'status': 401, 'message': 'Invalid credentials'})
-    hashed_password = hashed_password[0]
+    hashed_password = user_data[0]
+    role = user_data[1]
     if check_password_hash(hashed_password, password):
-        return json.dumps({'status': 200, 'message': 'Login successful'})
+        access_token = generate_access_token(email, role)
+        return json.dumps({'status': 200, 'access_token': access_token})
     return json.dumps({'status': 401, 'message': 'Invalid credentials'})
 
 def handle(req):
