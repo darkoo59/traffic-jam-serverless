@@ -48,8 +48,8 @@ const upperNavItems: NavItem[] = [
     text: "Map",
     icon: <LocationOnIcon />,
     route: "/map",
-    requireAuth: false,
-    // roles: ["Client"],
+    requireAuth: true,
+    roles: ["Client"],
   },
 ];
 
