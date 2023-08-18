@@ -42,7 +42,6 @@ def login_user():
 
 def handle(req):
     """handle a login request"""
-
     if request.method == 'POST':
         return login_user()
     else:

@@ -4,6 +4,7 @@ import psycopg2
 import os
 import logging
 from decimal import Decimal
+import jwt
 
 log = logging.getLogger(__name__)
 log.setLevel(os.environ.get("LOGLEVEL", "DEBUG"))
@@ -37,15 +38,25 @@ def get_markers():
         )
 
     conn.commit()
-    cursor.execute("SELECT * FROM markers")
-    markers_data = cursor.fetchall()  # Fetch all rows, not just one
+    cursor.execute("SELECT lat, lng, type  FROM markers")
+    rows = cursor.fetchall()  # Fetch all rows, not just one
     conn.close()
+    markers_data = []
+    for row in rows:
+        marker_obj = {
+            'lat': row[0],
+            'lng': row[1],
+            'type': row[2]
+        }
+        markers_data.append(marker_obj)
     log.info(json.dumps(markers_data, cls=DecimalEncoder))
     return json.dumps({'status': 200, 'markers_data': markers_data}, cls=DecimalEncoder)
 
 def handle(req):
     """handle a get-markers request"""
     if request.method == 'GET':
+        if not request.headers.get("authorization"):
+            return json.dumps({'status': 401, 'message': 'Unauthorized'})
         return get_markers()
     else:
         return json.dumps({'status': 405, 'message': 'Invalid request method'})

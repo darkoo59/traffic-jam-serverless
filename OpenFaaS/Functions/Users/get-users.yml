@@ -1,0 +1,10 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  get-users:
+    lang: python3-flask-debian
+    handler: ./get-users
+    image: darkoo59/get-users:latest
+
