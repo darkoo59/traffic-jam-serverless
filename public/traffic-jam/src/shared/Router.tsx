@@ -5,6 +5,7 @@ import Home from "./pages/home/home";
 import App from "../App"
 import Login from "./pages/login/login";
 import Map from "./pages/map/map";
+import Users from "./pages/users/users";
 
 const Router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const Router = createBrowserRouter([
       {
         path: "map",
         element: <Map />
+      },
+      {
+        path: "users",
+        element: <Users />
       }
     ]
   }

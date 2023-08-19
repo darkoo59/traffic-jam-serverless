@@ -3,6 +3,7 @@ import jwtDecode from "jwt-decode";
 import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { environment } from "../../environments/environment";
 
 const UserContext = createContext<UserContextValue | any>({});
 
@@ -39,7 +40,7 @@ const UserContextProvider = ({ children }: Props) => {
   const login = async (email: string, password: string) => {
     setLoading(true);
     try {
-      const response = await axios.post(`http://127.0.0.1:8080/function/login`,
+      const response = await axios.post(`${environment.openfaas_url}/login`,
         {
           email: email,
           password: password,

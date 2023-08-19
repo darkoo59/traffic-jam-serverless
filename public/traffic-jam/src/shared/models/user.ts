@@ -6,7 +6,7 @@ interface User {
     role?: Role;
     address?: string;
     phone?: string;
-    sex?: Sex;
+    gender?: Sex;
     birthdate?: Date;
   }
   
@@ -28,4 +28,4 @@ interface User {
     FEMALE = 1
   }
   
-  export type { Client, Admin, Role, Sex }
+  export type { User, Client, Admin, Role, Sex }

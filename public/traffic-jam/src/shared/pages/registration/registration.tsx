@@ -4,6 +4,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { environment } from "../../../environments/environment";
 
 const Register = () => {
   const [gender, setGender] = useState<string>('');
@@ -29,7 +30,7 @@ const Register = () => {
     setLoading(true);
 
     try {
-      await axios.post(`http://127.0.0.1:8080/function/register`,
+      await axios.post(`${environment.openfaas_url}/register`,
         {
           firstname: data.get("firstname"),
           lastname: data.get("lastname"),

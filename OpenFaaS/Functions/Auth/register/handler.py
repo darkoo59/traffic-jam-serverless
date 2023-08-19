@@ -78,9 +78,7 @@ def register_user():
 @cross_origin()
 def handle(req):
     """Handle registration request"""
-    if request.method == "OPTIONS":  # CORS preflight
-        return _build_cors_preflight_response()
-    elif request.method == 'POST':
+    if request.method == 'POST':
         return _corsify_actual_response(make_response(register_user()))
     else:
         return _corsify_actual_response(make_response(json.dumps({'status': 405, 'message': 'Invalid request method'})))

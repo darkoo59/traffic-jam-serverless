@@ -55,8 +55,8 @@ def get_markers():
 def handle(req):
     """handle a get-markers request"""
     if request.method == 'GET':
-        if not request.headers.get("authorization"):
-            return json.dumps({'status': 401, 'message': 'Unauthorized'})
+        # if not request.headers.get("authorization"):
+        #     return json.dumps({'status': 401, 'message': 'Unauthorized'})
         return get_markers()
     else:
         return json.dumps({'status': 405, 'message': 'Invalid request method'})

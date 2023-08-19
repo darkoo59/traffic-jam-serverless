@@ -22,6 +22,7 @@ import { ToastContainer } from "react-toastify";
 import { useContext } from "react";
 import { UserContext, UserContextValue } from "../contexts/user-context";
 import Map from "../pages/map/map";
+import PeopleIcon from '@mui/icons-material/People';
 
 const drawerWidth = 250;
 
@@ -49,8 +50,15 @@ const upperNavItems: NavItem[] = [
     icon: <LocationOnIcon />,
     route: "/map",
     requireAuth: true,
-    roles: ["Client"],
+    roles: ["Client", "Admin"],
   },
+  {
+    text: "Users",
+    icon: <PeopleIcon />,
+    route: "/users",
+    requireAuth: true,
+    roles: ["Admin"]
+  }
 ];
 
 const lowerNavItems: NavItem[] = [

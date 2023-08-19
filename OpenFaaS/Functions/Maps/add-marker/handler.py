@@ -46,8 +46,8 @@ def add_marker():
 def handle(req):
     """Handle add marker request"""
     if request.method == 'POST':
-        if not request.headers.get("authorization"):
-            return json.dumps({'status': 401, 'message': 'Unauthorized'})
+        # if not request.headers.get("authorization"):
+        #     return json.dumps({'status': 401, 'message': 'Unauthorized'})
         return add_marker()
     else:
         return json.dumps({'status': 405, 'message': 'Invalid request method'})
