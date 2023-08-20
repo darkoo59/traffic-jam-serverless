@@ -6,14 +6,6 @@ import psycopg2
 from werkzeug.security import check_password_hash
 from decimal import Decimal
 
-
-class DecimalEncoder(json.JSONEncoder):
-    def default(self, o):
-        if isinstance(o, Decimal):
-            return float(o)
-        return super(DecimalEncoder, self).default(o)
-
-
 def invoke(app, args):
     environ = {
         'REQUEST_METHOD': args.get('__ow_method', 'GET').upper(),
@@ -30,35 +22,27 @@ def invoke(app, args):
     )
         cursor = conn.cursor()
         # Create the users table if it doesn't exist
-        cursor.execute(
-                """
-                CREATE TABLE IF NOT EXISTS markers (
-                    id SERIAL PRIMARY KEY,
-                    lat DECIMAL NOT NULL,
-                    lng DECIMAL NOT NULL,
-                    type VARCHAR(255) NOT NULL
-                )
-                """
-            )
-
-        conn.commit()
-        cursor.execute("SELECT lat, lng, type  FROM markers")
-        rows = cursor.fetchall()  # Fetch all rows, not just one
+        cursor.execute("SELECT firstname, lastname, email, address, birthdate, gender, role FROM users")
+        rows = cursor.fetchall()
         conn.close()
-        markers_data = []
+
+        users_data = []
         for row in rows:
-            marker_obj = {
-                'lat': row[0],
-                'lng': row[1],
-                'type': row[2]
+            user_obj = {
+                'firstname': row[0],
+                'lastname': row[1],
+                'email': row[2],
+                'address': row[3],
+                'birthdate': row[4].strftime('%Y-%m-%d'),  # Convert datetime to string
+                'gender': row[5],
+                'role': row[6]
             }
-            markers_data.append(marker_obj)
+            users_data.append(user_obj)
         return {
             'statusCode': 200,
             'headers': {'Content-Type': 'application/json'},
-            'body': json.dumps({'status': 200, 'markers_data': markers_data}, cls=DecimalEncoder)
+            'body': json.dumps({'status': 200, 'users_data': users_data})
         }
-        return json.dumps({'status': 200, 'markers_data': markers_data}, cls=DecimalEncoder)
     else:
         return {
             'statusCode': 405,
