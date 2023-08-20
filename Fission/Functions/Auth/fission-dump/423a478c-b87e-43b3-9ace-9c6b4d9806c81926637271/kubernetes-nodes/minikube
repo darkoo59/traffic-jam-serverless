@@ -1,0 +1,337 @@
+metadata:
+  annotations:
+    kubeadm.alpha.kubernetes.io/cri-socket: unix:///var/run/cri-dockerd.sock
+    node.alpha.kubernetes.io/ttl: "0"
+    volumes.kubernetes.io/controller-managed-attach-detach: "true"
+  creationTimestamp: "2023-05-17T15:49:24Z"
+  labels:
+    beta.kubernetes.io/arch: amd64
+    beta.kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+    kubernetes.io/hostname: minikube
+    kubernetes.io/os: linux
+    minikube.k8s.io/commit: 08896fd1dc362c097c925146c4a0d0dac715ace0
+    minikube.k8s.io/name: minikube
+    minikube.k8s.io/primary: "true"
+    minikube.k8s.io/updated_at: 2023_05_17T17_49_30_0700
+    minikube.k8s.io/version: v1.30.1
+    node-role.kubernetes.io/control-plane: ""
+    node.kubernetes.io/exclude-from-external-load-balancers: ""
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:volumes.kubernetes.io/controller-managed-attach-detach: {}
+        f:labels:
+          .: {}
+          f:beta.kubernetes.io/arch: {}
+          f:beta.kubernetes.io/os: {}
+          f:kubernetes.io/arch: {}
+          f:kubernetes.io/hostname: {}
+          f:kubernetes.io/os: {}
+    manager: kubelet
+    operation: Update
+    time: "2023-05-17T15:49:24Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          f:kubeadm.alpha.kubernetes.io/cri-socket: {}
+        f:labels:
+          f:node-role.kubernetes.io/control-plane: {}
+          f:node.kubernetes.io/exclude-from-external-load-balancers: {}
+    manager: kubeadm
+    operation: Update
+    time: "2023-05-17T15:49:28Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          f:minikube.k8s.io/commit: {}
+          f:minikube.k8s.io/name: {}
+          f:minikube.k8s.io/primary: {}
+          f:minikube.k8s.io/updated_at: {}
+          f:minikube.k8s.io/version: {}
+    manager: kubectl-label
+    operation: Update
+    time: "2023-05-17T15:49:31Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          f:node.alpha.kubernetes.io/ttl: {}
+      f:spec:
+        f:podCIDR: {}
+        f:podCIDRs:
+          .: {}
+          v:"10.244.0.0/24": {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2023-08-19T15:09:10Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          k:{"type":"DiskPressure"}:
+            f:lastHeartbeatTime: {}
+            f:lastTransitionTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+          k:{"type":"MemoryPressure"}:
+            f:lastHeartbeatTime: {}
+            f:lastTransitionTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+          k:{"type":"PIDPressure"}:
+            f:lastHeartbeatTime: {}
+            f:lastTransitionTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+          k:{"type":"Ready"}:
+            f:lastHeartbeatTime: {}
+            f:lastTransitionTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+        f:images: {}
+        f:nodeInfo:
+          f:bootID: {}
+    manager: kubelet
+    operation: Update
+    subresource: status
+    time: "2023-08-19T20:37:53Z"
+  name: minikube
+  resourceVersion: "241485"
+  uid: cbc32389-7452-4093-8b49-f095a1f1b6c5
+spec:
+  podCIDR: 10.244.0.0/24
+  podCIDRs:
+  - 10.244.0.0/24
+status:
+  addresses:
+  - address: 192.168.49.2
+    type: InternalIP
+  - address: minikube
+    type: Hostname
+  allocatable:
+    cpu: "8"
+    ephemeral-storage: 1055762868Ki
+    hugepages-1Gi: "0"
+    hugepages-2Mi: "0"
+    memory: 3463108Ki
+    pods: "110"
+  capacity:
+    cpu: "8"
+    ephemeral-storage: 1055762868Ki
+    hugepages-1Gi: "0"
+    hugepages-2Mi: "0"
+    memory: 3463108Ki
+    pods: "110"
+  conditions:
+  - lastHeartbeatTime: "2023-08-19T20:37:53Z"
+    lastTransitionTime: "2023-08-19T15:09:05Z"
+    message: kubelet has sufficient memory available
+    reason: KubeletHasSufficientMemory
+    status: "False"
+    type: MemoryPressure
+  - lastHeartbeatTime: "2023-08-19T20:37:53Z"
+    lastTransitionTime: "2023-08-19T15:09:05Z"
+    message: kubelet has no disk pressure
+    reason: KubeletHasNoDiskPressure
+    status: "False"
+    type: DiskPressure
+  - lastHeartbeatTime: "2023-08-19T20:37:53Z"
+    lastTransitionTime: "2023-08-19T15:09:05Z"
+    message: kubelet has sufficient PID available
+    reason: KubeletHasSufficientPID
+    status: "False"
+    type: PIDPressure
+  - lastHeartbeatTime: "2023-08-19T20:37:53Z"
+    lastTransitionTime: "2023-08-19T15:09:05Z"
+    message: kubelet is posting ready status
+    reason: KubeletReady
+    status: "True"
+    type: Ready
+  daemonEndpoints:
+    kubeletEndpoint:
+      Port: 10250
+  images:
+  - names:
+    - darkoo59/get-markers@sha256:a25f7fd4331626b4c9cd9fbe5816a94c24d6f81f429271e2bd880acd00df7e1d
+    sizeBytes: 1057374071
+  - names:
+    - fission/python-env@sha256:fd51ebc32e04c25148f295117a02b98111efb9eca0d97db76f8938a964cde4c3
+    - fission/python-env:latest
+    sizeBytes: 390428401
+  - names:
+    - fission/python-builder@sha256:37c50173cf4093c684ffd0a9dc077e9b3c2106cb8e94a5fd40c115b96fb2b343
+    - fission/python-builder:latest
+    sizeBytes: 339974850
+  - names:
+    - darkoo59/login@sha256:aa21f8d224cbe9bd35c66a7572d67b48939c3a758e488d37047ec80095dfb563
+    sizeBytes: 304334069
+  - names:
+    - darkoo59/login@sha256:43ccf0115a0b93b6f5aa8770825ef199ce85710a5ff2656e1fa58e73f04948a2
+    sizeBytes: 304333958
+  - names:
+    - darkoo59/login@sha256:c2274d314a70dfa0f53894e0c3763156896ec6958a559b4398d9aa1a96067c2c
+    sizeBytes: 304333921
+  - names:
+    - darkoo59/login@sha256:d28d999520ec2595cd43d5b180775937252985a4eaac2a59151ac975ac535645
+    sizeBytes: 304333917
+  - names:
+    - registry.k8s.io/etcd@sha256:dd75ec974b0a2a6f6bb47001ba09207976e625db898d1b16735528c009cb171c
+    - registry.k8s.io/etcd:3.5.6-0
+    sizeBytes: 299475478
+  - names:
+    - darkoo59/register@sha256:35235d28945bf8296923fc65d52f14d249dc03de0b80d2597999589ee75ea12a
+    sizeBytes: 289740670
+  - names:
+    - darkoo59/login@sha256:4fdf5df7d7e4be05aa13120abe1ccdc58f8972b426cdbce0153c5a6c312afcf8
+    - darkoo59/login:latest
+    sizeBytes: 286433561
+  - names:
+    - darkoo59/login@sha256:c8241221d1d56e38d122ff7191606881c3f47fa430ad1238d5a0e5643ad2d654
+    sizeBytes: 286433515
+  - names:
+    - darkoo59/register@sha256:9b49dafd4d34a04a998572705553ead67666d1f0864a28ccc91cdc47e496d4e7
+    - darkoo59/register:latest
+    sizeBytes: 286325466
+  - names:
+    - darkoo59/register@sha256:dc4aa8460ea6cc90297c7d37adc42f72375bef94d39327b3dce82eb40fd4230e
+    sizeBytes: 286325253
+  - names:
+    - darkoo59/register@sha256:dcf163d303b309352067bd5fa152003b9fcfda2883b34a64be27eff58777dc78
+    sizeBytes: 286325010
+  - names:
+    - darkoo59/register@sha256:fdfdd514daf084c257d08071189ab7aa877d4b0d2e4d4235ab8384dcec5d9d84
+    sizeBytes: 286324886
+  - names:
+    - darkoo59/register@sha256:06e730f19fc5e4ce2a8732d74b63cd188a68639a479251ae2dadcf29fbf7ed00
+    sizeBytes: 286324836
+  - names:
+    - darkoo59/register@sha256:fd3df8a0d27beed5cc7374f6db4f7a61ad28246ac28e179ade92ef3b1bd1a082
+    sizeBytes: 286255574
+  - names:
+    - darkoo59/register@sha256:dd28eb797e9588e7947b81c7f409858f2d1886c21f57308cbe137ac731652a13
+    sizeBytes: 286255217
+  - names:
+    - darkoo59/register@sha256:cbf4d7a86f066b4e5c99de288540fbbc560018cab977ec0ee4deffef6b810a11
+    sizeBytes: 286255148
+  - names:
+    - darkoo59/register@sha256:f401291d65a3415ed3ca4eee94f3cd91d1cf80d07327c029e6ede1a99d90c649
+    sizeBytes: 286255087
+  - names:
+    - darkoo59/register@sha256:65711240ac1a4dba9209cc4fe1bc03240c8b122b6335de455e4aaa25e83f91b3
+    sizeBytes: 286254835
+  - names:
+    - darkoo59/register@sha256:f9d50c9042920d0e2f6fba8f548079dc235901876c64f88946a9440b6ccd83aa
+    sizeBytes: 286254826
+  - names:
+    - darkoo59/register@sha256:00985d1e055d2be71396a0325ba4faf5ea175bb71fd79b2062066aac24e0979c
+    sizeBytes: 286254821
+  - names:
+    - darkoo59/register@sha256:c4386542a42a81a551b19d3bc774b5cf0b1c43419df965679a89a44e56737843
+    sizeBytes: 286254810
+  - names:
+    - darkoo59/register@sha256:f46f5a826b5427809a0d689c6465f7cf7278d5c865906433a39d218779c8beb6
+    sizeBytes: 286254806
+  - names:
+    - darkoo59/register@sha256:f4a6a4fad6d6f6b3ce2df6da5a967ef7d9d93481d03181852c2a7400d3a1744c
+    sizeBytes: 286254790
+  - names:
+    - darkoo59/register@sha256:10c1af3e59a2284bc55e7baa4fdaed858602f21f214a15b00f59af02056e352c
+    sizeBytes: 286254610
+  - names:
+    - darkoo59/register@sha256:f1e1bb0545777b0e95851ab95391fe321fc381d6d4f88e80cd83e6edba03a143
+    sizeBytes: 286254608
+  - names:
+    - darkoo59/register@sha256:7ee3ff550bb013f0b1bc937fc901d9cbea1c11ed9501eea1702844b113236ab5
+    sizeBytes: 286254607
+  - names:
+    - darkoo59/register@sha256:3e3576615a5e956e2b0e2aba82db4252b7f9fe3bce2f470f32d90c2cfb302dc3
+    sizeBytes: 286254589
+  - names:
+    - darkoo59/register@sha256:eac9d573020bdbd49b44fcda32ab907272873c34e0623628c3fd67e47ebab089
+    sizeBytes: 286254569
+  - names:
+    - darkoo59/login@sha256:3207f3d50eaa40596c825b830c770508138b0f59c8d332002d78ed06f687eba0
+    sizeBytes: 286254499
+  - names:
+    - darkoo59/login@sha256:14dd1c5d51cf03213991a8030978e3979c9b2466a35eb201b5a0dee47d371571
+    sizeBytes: 286254474
+  - names:
+    - darkoo59/login@sha256:0a5a2dc689744470f0e712a6c985660a99f0923b6d9da879923440a44c33d4f3
+    sizeBytes: 286254315
+  - names:
+    - darkoo59/login@sha256:7093692d4accb25f9512c1532e430c13f24c933efebe5a25a9d472ded65d1b35
+    sizeBytes: 286254153
+  - names:
+    - darkoo59/login@sha256:c6d2518ecd6d50bf3dbd45043bc6fad028f4e8aa6d6ce3a560e833963c73b4f3
+    sizeBytes: 286254153
+  - names:
+    - darkoo59/login@sha256:beb834d6b1303f21229ea2f64b2ac5dc3736d33305988bc535a1451bd518e8c8
+    sizeBytes: 286254150
+  - names:
+    - darkoo59/login@sha256:fc57f14dbe17fc8296226a24aaafc6a72f5870a27c32de82c3d37909567aae34
+    sizeBytes: 286254141
+  - names:
+    - darkoo59/login@sha256:20039090b2a2ce6ffaa53fe03368e7b853b9e3bc0b3e1890e6198aeebcbbe81f
+    sizeBytes: 286254136
+  - names:
+    - darkoo59/login@sha256:e63d9946b4bf5b8049dadf78c2fc5a815115910fd063af737ea6a9f9011c188e
+    sizeBytes: 286254127
+  - names:
+    - darkoo59/login@sha256:4326d87c8ea6d56c7319bcd5f51b9607147774c65ddb8773e543b6ce3cb2962d
+    sizeBytes: 286254126
+  - names:
+    - darkoo59/login@sha256:b1ab30b0e055fc937f21ae41076112c88d948bbc23719981557b50ae9c401ae3
+    sizeBytes: 286254102
+  - names:
+    - darkoo59/login@sha256:096d3028cb6c51beda9ece02ef142395b9686a681482d42d6049af5f2fe53a16
+    sizeBytes: 286254101
+  - names:
+    - darkoo59/login@sha256:518f096b2d6db5bdcae90b64f16a87d5c33fc9e2803280c7507cc6e2a48da748
+    sizeBytes: 286254088
+  - names:
+    - darkoo59/get-markers@sha256:191ade01aae93f0e113f4326fdf0c83b2ff079738a71cb96e14d7164e09cb008
+    - darkoo59/get-markers:latest
+    sizeBytes: 284444032
+  - names:
+    - darkoo59/get-markers@sha256:661dc9ad4cc23a4447ed885ba96ac329e8b5be0797f685e97ce8455a90405268
+    sizeBytes: 284444028
+  - names:
+    - darkoo59/delete-user@sha256:265fa926ea4b1c9f45ca5fe2f61b4ffc8ed19b93360a5c3883db0b5e433178da
+    - darkoo59/delete-user:latest
+    sizeBytes: 284442950
+  - names:
+    - darkoo59/delete-user@sha256:0869aa5fd51e2df056fa544490b9fa0fe790994408696e895eccca964e873c64
+    sizeBytes: 284442836
+  - names:
+    - darkoo59/get-users@sha256:76d18f578a877350834b89a3718fdbff779a81aa163583a6c879ce235e1d9ed4
+    - darkoo59/get-users:latest
+    sizeBytes: 284442806
+  - names:
+    - darkoo59/get-users@sha256:8ba3e2d2e6dc4382f74bf47f3b03287d583830584f912a0066768b257b08f4c8
+    sizeBytes: 284442794
+  nodeInfo:
+    architecture: amd64
+    bootID: 38dc8466-6777-4f6f-8481-6ab0cd1d5116
+    containerRuntimeVersion: docker://23.0.2
+    kernelVersion: 5.15.90.1-microsoft-standard-WSL2
+    kubeProxyVersion: v1.26.3
+    kubeletVersion: v1.26.3
+    machineID: 4be7b89512914632b7eb285a3ba7704a
+    operatingSystem: linux
+    osImage: Ubuntu 20.04.5 LTS
+    systemUUID: 4be7b89512914632b7eb285a3ba7704a

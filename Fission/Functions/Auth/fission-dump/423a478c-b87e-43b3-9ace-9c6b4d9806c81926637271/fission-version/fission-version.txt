@@ -1,0 +1,10 @@
+client:
+  fission/core:
+    BuildDate: "2023-01-13T06:26:33Z"
+    GitCommit: deb3523b
+    Version: v1.18.0
+server:
+  fission/core:
+    BuildDate: "2023-01-13T06:26:33Z"
+    GitCommit: deb3523b
+    Version: v1.18.0

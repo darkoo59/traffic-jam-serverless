@@ -1,0 +1,354 @@
+metadata:
+  annotations:
+    prometheus.io/path: /metrics
+    prometheus.io/port: "8080"
+    prometheus.io/scrape: "true"
+  creationTimestamp: "2023-05-17T21:14:32Z"
+  generateName: storagesvc-5c8bb4fbc5-
+  labels:
+    application: fission-storage
+    pod-template-hash: 5c8bb4fbc5
+    svc: storagesvc
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:prometheus.io/path: {}
+          f:prometheus.io/port: {}
+          f:prometheus.io/scrape: {}
+        f:generateName: {}
+        f:labels:
+          .: {}
+          f:application: {}
+          f:pod-template-hash: {}
+          f:svc: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"de3f61c8-3d33-4d0e-9167-ee0d9ebbd60b"}: {}
+      f:spec:
+        f:containers:
+          k:{"name":"storagesvc"}:
+            .: {}
+            f:args: {}
+            f:command: {}
+            f:env:
+              .: {}
+              k:{"name":"DEBUG_ENV"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"FISSION_RESOURCE_NAMESPACES"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"OTEL_EXPORTER_OTLP_ENDPOINT"}:
+                .: {}
+                f:name: {}
+              k:{"name":"OTEL_EXPORTER_OTLP_INSECURE"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"OTEL_PROPAGATORS"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"OTEL_TRACES_SAMPLER"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"OTEL_TRACES_SAMPLER_ARG"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"PPROF_ENABLED"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"PRUNE_ENABLED"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"PRUNE_INTERVAL"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:livenessProbe:
+              .: {}
+              f:failureThreshold: {}
+              f:httpGet:
+                .: {}
+                f:path: {}
+                f:port: {}
+                f:scheme: {}
+              f:initialDelaySeconds: {}
+              f:periodSeconds: {}
+              f:successThreshold: {}
+              f:timeoutSeconds: {}
+            f:name: {}
+            f:ports:
+              .: {}
+              k:{"containerPort":8000,"protocol":"TCP"}:
+                .: {}
+                f:containerPort: {}
+                f:name: {}
+                f:protocol: {}
+              k:{"containerPort":8080,"protocol":"TCP"}:
+                .: {}
+                f:containerPort: {}
+                f:name: {}
+                f:protocol: {}
+            f:readinessProbe:
+              .: {}
+              f:failureThreshold: {}
+              f:httpGet:
+                .: {}
+                f:path: {}
+                f:port: {}
+                f:scheme: {}
+              f:initialDelaySeconds: {}
+              f:periodSeconds: {}
+              f:successThreshold: {}
+              f:timeoutSeconds: {}
+            f:resources: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+            f:volumeMounts:
+              .: {}
+              k:{"mountPath":"/fission"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+        f:dnsPolicy: {}
+        f:enableServiceLinks: {}
+        f:restartPolicy: {}
+        f:schedulerName: {}
+        f:securityContext:
+          .: {}
+          f:fsGroup: {}
+          f:runAsGroup: {}
+          f:runAsNonRoot: {}
+          f:runAsUser: {}
+        f:serviceAccount: {}
+        f:serviceAccountName: {}
+        f:terminationGracePeriodSeconds: {}
+        f:volumes:
+          .: {}
+          k:{"name":"fission-storage"}:
+            .: {}
+            f:name: {}
+            f:persistentVolumeClaim:
+              .: {}
+              f:claimName: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2023-05-17T21:14:32Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          k:{"type":"ContainersReady"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Initialized"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Ready"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+        f:containerStatuses: {}
+        f:hostIP: {}
+        f:phase: {}
+        f:podIP: {}
+        f:podIPs:
+          .: {}
+          k:{"ip":"10.244.2.22"}:
+            .: {}
+            f:ip: {}
+        f:startTime: {}
+    manager: kubelet
+    operation: Update
+    subresource: status
+    time: "2023-08-19T15:54:02Z"
+  name: storagesvc-5c8bb4fbc5-n7mf8
+  namespace: fission
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: storagesvc-5c8bb4fbc5
+    uid: de3f61c8-3d33-4d0e-9167-ee0d9ebbd60b
+  resourceVersion: "226312"
+  uid: 75eef648-c783-4e90-ab90-587984594e54
+spec:
+  containers:
+  - args:
+    - --storageServicePort
+    - "8000"
+    - --storageType
+    - local
+    command:
+    - /fission-bundle
+    env:
+    - name: PRUNE_ENABLED
+      value: "true"
+    - name: PRUNE_INTERVAL
+      value: "60"
+    - name: DEBUG_ENV
+      value: "false"
+    - name: PPROF_ENABLED
+      value: "false"
+    - name: FISSION_RESOURCE_NAMESPACES
+      value: default
+    - name: OTEL_EXPORTER_OTLP_ENDPOINT
+    - name: OTEL_EXPORTER_OTLP_INSECURE
+      value: "true"
+    - name: OTEL_TRACES_SAMPLER
+      value: parentbased_traceidratio
+    - name: OTEL_TRACES_SAMPLER_ARG
+      value: "0.1"
+    - name: OTEL_PROPAGATORS
+      value: tracecontext,baggage
+    image: index.docker.io/fission/fission-bundle:v1.18.0
+    imagePullPolicy: IfNotPresent
+    livenessProbe:
+      failureThreshold: 3
+      httpGet:
+        path: /healthz
+        port: 8000
+        scheme: HTTP
+      initialDelaySeconds: 35
+      periodSeconds: 5
+      successThreshold: 1
+      timeoutSeconds: 1
+    name: storagesvc
+    ports:
+    - containerPort: 8080
+      name: metrics
+      protocol: TCP
+    - containerPort: 8000
+      name: http
+      protocol: TCP
+    readinessProbe:
+      failureThreshold: 30
+      httpGet:
+        path: /healthz
+        port: 8000
+        scheme: HTTP
+      initialDelaySeconds: 1
+      periodSeconds: 1
+      successThreshold: 1
+      timeoutSeconds: 1
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /fission
+      name: fission-storage
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-w6dx5
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: minikube
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    fsGroup: 10001
+    runAsGroup: 10001
+    runAsNonRoot: true
+    runAsUser: 10001
+  serviceAccount: fission-storagesvc
+  serviceAccountName: fission-storagesvc
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: fission-storage
+    persistentVolumeClaim:
+      claimName: fission-storage-pvc
+  - name: kube-api-access-w6dx5
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2023-05-17T21:14:33Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2023-08-19T15:54:02Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2023-08-19T15:54:02Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2023-05-17T21:14:33Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://f1a8c227eaf1a3b55662447eec84375c497b2ad5dcc2711990cd8bb1911a5ae8
+    image: fission/fission-bundle:v1.18.0
+    imageID: docker-pullable://fission/fission-bundle@sha256:a309b1f6c78527826793b114d7737ee788c47a371fca20702f7410c2d6c04df8
+    lastState:
+      terminated:
+        containerID: docker://f434e7e8e968b0323486e24ad4c94916edc3c719c69fb95143f30a52925ffa2a
+        exitCode: 1
+        finishedAt: "2023-08-19T15:53:13Z"
+        reason: Error
+        startedAt: "2023-08-19T15:05:14Z"
+    name: storagesvc
+    ready: true
+    restartCount: 54
+    started: true
+    state:
+      running:
+        startedAt: "2023-08-19T15:53:47Z"
+  hostIP: 192.168.49.2
+  phase: Running
+  podIP: 10.244.2.22
+  podIPs:
+  - ip: 10.244.2.22
+  qosClass: BestEffort
+  startTime: "2023-05-17T21:14:33Z"

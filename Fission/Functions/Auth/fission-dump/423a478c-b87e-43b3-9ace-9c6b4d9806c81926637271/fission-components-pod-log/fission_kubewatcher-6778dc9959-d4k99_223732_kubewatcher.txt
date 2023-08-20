@@ -1,0 +1,3 @@
+|
+  {"level":"info","ts":"2023-08-19T12:56:40.958Z","caller":"otel/provider.go:50","msg":"OTEL_EXPORTER_OTLP_ENDPOINT not set, skipping Opentelemtry tracing"}
+  {"level":"info","ts":"2023-08-19T12:56:41.353Z","caller":"crd/client.go:105","msg":"Waiting for CRDs to be installed"}

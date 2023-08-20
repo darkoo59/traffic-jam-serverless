@@ -1,0 +1,417 @@
+metadata:
+  annotations:
+    prometheus.io/path: /metrics
+    prometheus.io/port: "8080"
+    prometheus.io/scrape: "true"
+  creationTimestamp: "2023-05-17T21:14:32Z"
+  generateName: router-6d9954f848-
+  labels:
+    application: fission-router
+    pod-template-hash: 6d9954f848
+    svc: router
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:prometheus.io/path: {}
+          f:prometheus.io/port: {}
+          f:prometheus.io/scrape: {}
+        f:generateName: {}
+        f:labels:
+          .: {}
+          f:application: {}
+          f:pod-template-hash: {}
+          f:svc: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"8238d21a-7744-4743-90fd-bd9682f64284"}: {}
+      f:spec:
+        f:containers:
+          k:{"name":"router"}:
+            .: {}
+            f:args: {}
+            f:command: {}
+            f:env:
+              .: {}
+              k:{"name":"DEBUG_ENV"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"DISPLAY_ACCESS_LOG"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"FISSION_RESOURCE_NAMESPACES"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"OTEL_EXPORTER_OTLP_ENDPOINT"}:
+                .: {}
+                f:name: {}
+              k:{"name":"OTEL_EXPORTER_OTLP_INSECURE"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"OTEL_PROPAGATORS"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"OTEL_TRACES_SAMPLER"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"OTEL_TRACES_SAMPLER_ARG"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"POD_NAMESPACE"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:fieldRef: {}
+              k:{"name":"PPROF_ENABLED"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"ROUTER_ROUND_TRIP_DISABLE_KEEP_ALIVE"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"ROUTER_ROUND_TRIP_KEEP_ALIVE_TIME"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"ROUTER_ROUND_TRIP_MAX_RETRIES"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"ROUTER_ROUND_TRIP_TIMEOUT"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"ROUTER_ROUNDTRIP_TIMEOUT_EXPONENT"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"ROUTER_SVC_ADDRESS_MAX_RETRIES"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"ROUTER_SVC_ADDRESS_UPDATE_TIMEOUT"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"ROUTER_UNTAP_SERVICE_TIMEOUT"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"USE_ENCODED_PATH"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:livenessProbe:
+              .: {}
+              f:failureThreshold: {}
+              f:httpGet:
+                .: {}
+                f:path: {}
+                f:port: {}
+                f:scheme: {}
+              f:initialDelaySeconds: {}
+              f:periodSeconds: {}
+              f:successThreshold: {}
+              f:timeoutSeconds: {}
+            f:name: {}
+            f:ports:
+              .: {}
+              k:{"containerPort":8080,"protocol":"TCP"}:
+                .: {}
+                f:containerPort: {}
+                f:name: {}
+                f:protocol: {}
+              k:{"containerPort":8888,"protocol":"TCP"}:
+                .: {}
+                f:containerPort: {}
+                f:name: {}
+                f:protocol: {}
+            f:readinessProbe:
+              .: {}
+              f:failureThreshold: {}
+              f:httpGet:
+                .: {}
+                f:path: {}
+                f:port: {}
+                f:scheme: {}
+              f:initialDelaySeconds: {}
+              f:periodSeconds: {}
+              f:successThreshold: {}
+              f:timeoutSeconds: {}
+            f:resources: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+            f:volumeMounts:
+              .: {}
+              k:{"mountPath":"/etc/config/config.yaml"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+                f:subPath: {}
+        f:dnsPolicy: {}
+        f:enableServiceLinks: {}
+        f:restartPolicy: {}
+        f:schedulerName: {}
+        f:securityContext:
+          .: {}
+          f:fsGroup: {}
+          f:runAsGroup: {}
+          f:runAsNonRoot: {}
+          f:runAsUser: {}
+        f:serviceAccount: {}
+        f:serviceAccountName: {}
+        f:terminationGracePeriodSeconds: {}
+        f:volumes:
+          .: {}
+          k:{"name":"config-volume"}:
+            .: {}
+            f:configMap:
+              .: {}
+              f:defaultMode: {}
+              f:name: {}
+            f:name: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2023-05-17T21:14:32Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          k:{"type":"ContainersReady"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Initialized"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Ready"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+        f:containerStatuses: {}
+        f:hostIP: {}
+        f:phase: {}
+        f:podIP: {}
+        f:podIPs:
+          .: {}
+          k:{"ip":"10.244.2.34"}:
+            .: {}
+            f:ip: {}
+        f:startTime: {}
+    manager: kubelet
+    operation: Update
+    subresource: status
+    time: "2023-08-19T20:17:08Z"
+  name: router-6d9954f848-sftbp
+  namespace: fission
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: router-6d9954f848
+    uid: 8238d21a-7744-4743-90fd-bd9682f64284
+  resourceVersion: "240188"
+  uid: f5841296-7c64-4411-b98d-5c58dd0fee14
+spec:
+  containers:
+  - args:
+    - --routerPort
+    - "8888"
+    - --executorUrl
+    - http://executor.fission
+    command:
+    - /fission-bundle
+    env:
+    - name: POD_NAMESPACE
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.namespace
+    - name: ROUTER_ROUND_TRIP_TIMEOUT
+      value: 50ms
+    - name: ROUTER_ROUNDTRIP_TIMEOUT_EXPONENT
+      value: "2"
+    - name: ROUTER_ROUND_TRIP_KEEP_ALIVE_TIME
+      value: 30s
+    - name: ROUTER_ROUND_TRIP_DISABLE_KEEP_ALIVE
+      value: "true"
+    - name: ROUTER_ROUND_TRIP_MAX_RETRIES
+      value: "10"
+    - name: ROUTER_SVC_ADDRESS_MAX_RETRIES
+      value: "5"
+    - name: ROUTER_SVC_ADDRESS_UPDATE_TIMEOUT
+      value: 30s
+    - name: ROUTER_UNTAP_SERVICE_TIMEOUT
+      value: 3600s
+    - name: USE_ENCODED_PATH
+      value: "false"
+    - name: DEBUG_ENV
+      value: "false"
+    - name: PPROF_ENABLED
+      value: "false"
+    - name: DISPLAY_ACCESS_LOG
+      value: "false"
+    - name: FISSION_RESOURCE_NAMESPACES
+      value: default
+    - name: OTEL_EXPORTER_OTLP_ENDPOINT
+    - name: OTEL_EXPORTER_OTLP_INSECURE
+      value: "true"
+    - name: OTEL_TRACES_SAMPLER
+      value: parentbased_traceidratio
+    - name: OTEL_TRACES_SAMPLER_ARG
+      value: "0.1"
+    - name: OTEL_PROPAGATORS
+      value: tracecontext,baggage
+    image: index.docker.io/fission/fission-bundle:v1.18.0
+    imagePullPolicy: IfNotPresent
+    livenessProbe:
+      failureThreshold: 3
+      httpGet:
+        path: /router-healthz
+        port: 8888
+        scheme: HTTP
+      initialDelaySeconds: 35
+      periodSeconds: 5
+      successThreshold: 1
+      timeoutSeconds: 1
+    name: router
+    ports:
+    - containerPort: 8080
+      name: metrics
+      protocol: TCP
+    - containerPort: 8888
+      name: http
+      protocol: TCP
+    readinessProbe:
+      failureThreshold: 30
+      httpGet:
+        path: /router-healthz
+        port: 8888
+        scheme: HTTP
+      initialDelaySeconds: 1
+      periodSeconds: 1
+      successThreshold: 1
+      timeoutSeconds: 1
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /etc/config/config.yaml
+      name: config-volume
+      subPath: config.yaml
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-tlrfc
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: minikube
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    fsGroup: 10001
+    runAsGroup: 10001
+    runAsNonRoot: true
+    runAsUser: 10001
+  serviceAccount: fission-router
+  serviceAccountName: fission-router
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - configMap:
+      defaultMode: 420
+      name: feature-config
+    name: config-volume
+  - name: kube-api-access-tlrfc
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2023-05-17T21:14:33Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2023-08-19T20:17:08Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2023-08-19T20:17:08Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2023-05-17T21:14:33Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://0df643e33aeaa23fc861061183e2beb69c9681633da41ff31dc903f817ff35ea
+    image: fission/fission-bundle:v1.18.0
+    imageID: docker-pullable://fission/fission-bundle@sha256:a309b1f6c78527826793b114d7737ee788c47a371fca20702f7410c2d6c04df8
+    lastState:
+      terminated:
+        containerID: docker://f17f7ad7aee6695b6d82bf45dd1789c5d0de3c3c16dfce299d90e59d2600da43
+        exitCode: 1
+        finishedAt: "2023-08-19T20:17:02Z"
+        reason: Error
+        startedAt: "2023-08-19T15:53:47Z"
+    name: router
+    ready: true
+    restartCount: 60
+    started: true
+    state:
+      running:
+        startedAt: "2023-08-19T20:17:06Z"
+  hostIP: 192.168.49.2
+  phase: Running
+  podIP: 10.244.2.34
+  podIPs:
+  - ip: 10.244.2.34
+  qosClass: BestEffort
+  startTime: "2023-05-17T21:14:33Z"

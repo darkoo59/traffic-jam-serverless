@@ -1,0 +1,5 @@
+|
+  [2023-08-19 20:15:08,542] INFO in socket_tracker: Websocket tracker initialized
+  2023-08-19 20:15:08,542 - INFO - Websocket tracker initialized
+  [2023-08-19 20:15:08,560] INFO in server: Starting bjoern based server
+  2023-08-19 20:15:08,560 - INFO - Starting bjoern based server

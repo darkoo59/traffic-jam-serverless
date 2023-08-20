@@ -1,0 +1,60 @@
+metadata:
+  annotations:
+    meta.helm.sh/release-name: fission
+    meta.helm.sh/release-namespace: fission
+  creationTimestamp: "2023-05-17T21:14:31Z"
+  labels:
+    app.kubernetes.io/managed-by: Helm
+    chart: fission-all-v1.18.0
+    svc: executor
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:meta.helm.sh/release-name: {}
+          f:meta.helm.sh/release-namespace: {}
+        f:labels:
+          .: {}
+          f:app.kubernetes.io/managed-by: {}
+          f:chart: {}
+          f:svc: {}
+      f:spec:
+        f:internalTrafficPolicy: {}
+        f:ports:
+          .: {}
+          k:{"port":80,"protocol":"TCP"}:
+            .: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+        f:selector: {}
+        f:sessionAffinity: {}
+        f:type: {}
+    manager: helm
+    operation: Update
+    time: "2023-05-17T21:14:31Z"
+  name: executor
+  namespace: fission
+  resourceVersion: "16299"
+  uid: 028dcf56-4c5b-42eb-abdd-8369b26d7986
+spec:
+  clusterIP: 10.101.113.89
+  clusterIPs:
+  - 10.101.113.89
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8888
+  selector:
+    svc: executor
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

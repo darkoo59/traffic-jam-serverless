@@ -1,0 +1,381 @@
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+    meta.helm.sh/release-name: fission
+    meta.helm.sh/release-namespace: fission
+  creationTimestamp: "2023-05-17T21:14:31Z"
+  generation: 1
+  labels:
+    app.kubernetes.io/managed-by: Helm
+    chart: fission-all-v1.18.0
+    svc: executor
+  managedFields:
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:meta.helm.sh/release-name: {}
+          f:meta.helm.sh/release-namespace: {}
+        f:labels:
+          .: {}
+          f:app.kubernetes.io/managed-by: {}
+          f:chart: {}
+          f:svc: {}
+      f:spec:
+        f:progressDeadlineSeconds: {}
+        f:replicas: {}
+        f:revisionHistoryLimit: {}
+        f:selector: {}
+        f:strategy:
+          f:rollingUpdate:
+            .: {}
+            f:maxSurge: {}
+            f:maxUnavailable: {}
+          f:type: {}
+        f:template:
+          f:metadata:
+            f:annotations:
+              .: {}
+              f:prometheus.io/path: {}
+              f:prometheus.io/port: {}
+              f:prometheus.io/scrape: {}
+            f:labels:
+              .: {}
+              f:svc: {}
+          f:spec:
+            f:containers:
+              k:{"name":"executor"}:
+                .: {}
+                f:args: {}
+                f:command: {}
+                f:env:
+                  .: {}
+                  k:{"name":"ADOPT_EXISTING_RESOURCES"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"DEBUG_ENV"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"ENABLE_ISTIO"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"FETCHER_IMAGE"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"FETCHER_IMAGE_PULL_POLICY"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"FETCHER_MAXCPU"}:
+                    .: {}
+                    f:name: {}
+                  k:{"name":"FETCHER_MAXMEM"}:
+                    .: {}
+                    f:name: {}
+                  k:{"name":"FETCHER_MINCPU"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"FETCHER_MINMEM"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"FISSION_BUILDER_NAMESPACE"}:
+                    .: {}
+                    f:name: {}
+                  k:{"name":"FISSION_DEFAULT_NAMESPACE"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"FISSION_FUNCTION_NAMESPACE"}:
+                    .: {}
+                    f:name: {}
+                  k:{"name":"FISSION_RESOURCE_NAMESPACES"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"HELM_RELEASE_NAME"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"OBJECT_REAPER_INTERVAL"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"OTEL_EXPORTER_OTLP_ENDPOINT"}:
+                    .: {}
+                    f:name: {}
+                  k:{"name":"OTEL_EXPORTER_OTLP_INSECURE"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"OTEL_PROPAGATORS"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"OTEL_TRACES_SAMPLER"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"OTEL_TRACES_SAMPLER_ARG"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"POD_READY_TIMEOUT"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"PPROF_ENABLED"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"RUNTIME_IMAGE_PULL_POLICY"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"SERVICEACCOUNT_CHECK_ENABLED"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"SERVICEACCOUNT_CHECK_INTERVAL"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:livenessProbe:
+                  .: {}
+                  f:failureThreshold: {}
+                  f:httpGet:
+                    .: {}
+                    f:path: {}
+                    f:port: {}
+                    f:scheme: {}
+                  f:initialDelaySeconds: {}
+                  f:periodSeconds: {}
+                  f:successThreshold: {}
+                  f:timeoutSeconds: {}
+                f:name: {}
+                f:ports:
+                  .: {}
+                  k:{"containerPort":8080,"protocol":"TCP"}:
+                    .: {}
+                    f:containerPort: {}
+                    f:name: {}
+                    f:protocol: {}
+                  k:{"containerPort":8888,"protocol":"TCP"}:
+                    .: {}
+                    f:containerPort: {}
+                    f:name: {}
+                    f:protocol: {}
+                f:readinessProbe:
+                  .: {}
+                  f:failureThreshold: {}
+                  f:httpGet:
+                    .: {}
+                    f:path: {}
+                    f:port: {}
+                    f:scheme: {}
+                  f:initialDelaySeconds: {}
+                  f:periodSeconds: {}
+                  f:successThreshold: {}
+                  f:timeoutSeconds: {}
+                f:resources: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+            f:dnsPolicy: {}
+            f:restartPolicy: {}
+            f:schedulerName: {}
+            f:securityContext:
+              .: {}
+              f:fsGroup: {}
+              f:runAsGroup: {}
+              f:runAsNonRoot: {}
+              f:runAsUser: {}
+            f:serviceAccount: {}
+            f:serviceAccountName: {}
+            f:terminationGracePeriodSeconds: {}
+    manager: helm
+    operation: Update
+    time: "2023-05-17T21:14:31Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          f:deployment.kubernetes.io/revision: {}
+      f:status:
+        f:availableReplicas: {}
+        f:conditions:
+          .: {}
+          k:{"type":"Available"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Progressing"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+        f:observedGeneration: {}
+        f:readyReplicas: {}
+        f:replicas: {}
+        f:updatedReplicas: {}
+    manager: kube-controller-manager
+    operation: Update
+    subresource: status
+    time: "2023-08-19T15:54:13Z"
+  name: executor
+  namespace: fission
+  resourceVersion: "226362"
+  uid: 6a4bea8a-e86c-41d4-8d03-bf70713df67f
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      svc: executor
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        prometheus.io/path: /metrics
+        prometheus.io/port: "8080"
+        prometheus.io/scrape: "true"
+      creationTimestamp: null
+      labels:
+        svc: executor
+    spec:
+      containers:
+      - args:
+        - --executorPort
+        - "8888"
+        command:
+        - /fission-bundle
+        env:
+        - name: FETCHER_IMAGE
+          value: fission/fetcher:v1.18.0
+        - name: FETCHER_IMAGE_PULL_POLICY
+          value: IfNotPresent
+        - name: FISSION_BUILDER_NAMESPACE
+        - name: FISSION_FUNCTION_NAMESPACE
+        - name: FISSION_DEFAULT_NAMESPACE
+          value: default
+        - name: RUNTIME_IMAGE_PULL_POLICY
+          value: IfNotPresent
+        - name: ADOPT_EXISTING_RESOURCES
+          value: "false"
+        - name: POD_READY_TIMEOUT
+          value: 300s
+        - name: ENABLE_ISTIO
+          value: "false"
+        - name: FETCHER_MINCPU
+          value: 10m
+        - name: FETCHER_MINMEM
+          value: 16Mi
+        - name: FETCHER_MAXCPU
+        - name: FETCHER_MAXMEM
+        - name: DEBUG_ENV
+          value: "false"
+        - name: PPROF_ENABLED
+          value: "false"
+        - name: OBJECT_REAPER_INTERVAL
+          value: "5"
+        - name: SERVICEACCOUNT_CHECK_ENABLED
+          value: "true"
+        - name: SERVICEACCOUNT_CHECK_INTERVAL
+          value: "0"
+        - name: FISSION_RESOURCE_NAMESPACES
+          value: default
+        - name: HELM_RELEASE_NAME
+          value: fission
+        - name: OTEL_EXPORTER_OTLP_ENDPOINT
+        - name: OTEL_EXPORTER_OTLP_INSECURE
+          value: "true"
+        - name: OTEL_TRACES_SAMPLER
+          value: parentbased_traceidratio
+        - name: OTEL_TRACES_SAMPLER_ARG
+          value: "0.1"
+        - name: OTEL_PROPAGATORS
+          value: tracecontext,baggage
+        image: index.docker.io/fission/fission-bundle:v1.18.0
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /healthz
+            port: 8888
+            scheme: HTTP
+          initialDelaySeconds: 35
+          periodSeconds: 5
+          successThreshold: 1
+          timeoutSeconds: 1
+        name: executor
+        ports:
+        - containerPort: 8080
+          name: metrics
+          protocol: TCP
+        - containerPort: 8888
+          name: http
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 30
+          httpGet:
+            path: /healthz
+            port: 8888
+            scheme: HTTP
+          initialDelaySeconds: 1
+          periodSeconds: 1
+          successThreshold: 1
+          timeoutSeconds: 1
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext:
+        fsGroup: 10001
+        runAsGroup: 10001
+        runAsNonRoot: true
+        runAsUser: 10001
+      serviceAccount: fission-executor
+      serviceAccountName: fission-executor
+      terminationGracePeriodSeconds: 30
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2023-05-17T21:14:32Z"
+    lastUpdateTime: "2023-05-17T21:15:48Z"
+    message: ReplicaSet "executor-65cf66f689" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  - lastTransitionTime: "2023-08-19T15:54:11Z"
+    lastUpdateTime: "2023-08-19T15:54:11Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  observedGeneration: 1
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1
