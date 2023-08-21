@@ -1,24 +1,9 @@
-from _json import make_encoder
-
-from flask import Flask, request, make_response
+from flask import Flask, request
 import json
 from werkzeug.security import generate_password_hash
 import psycopg2
-from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
-CORS(app)
-
-def _corsify_actual_response(response):
-    response.headers.add("Access-Control-Allow-Origin", "*")
-    return response
-
-def _build_cors_preflight_response():
-    response = make_response()
-    response.headers.add("Access-Control-Allow-Origin", "*")
-    response.headers.add('Access-Control-Allow-Headers', "*")
-    response.headers.add('Access-Control-Allow-Methods', "*")
-    return response
 
 def register_user():
     data = request.get_json()
@@ -75,10 +60,9 @@ def register_user():
     conn.close()
     return json.dumps({'status': 200, 'message': 'Registration successful'})
 
-@cross_origin()
-def handle(req):
+def main():
     """Handle registration request"""
     if request.method == 'POST':
-        return _corsify_actual_response(make_response(register_user()))
+        return register_user()
     else:
-        return _corsify_actual_response(make_response(json.dumps({'status': 405, 'message': 'Invalid request method'})))
+        return json.dumps({'status': 405, 'message': 'Invalid request method'})
