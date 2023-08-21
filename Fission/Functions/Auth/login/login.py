@@ -25,6 +25,8 @@ def login_user():
         user="postgres",
         password="postgres"
     )
+    # conn.close()
+    # return json.dumps({'status': 200, 'message': 'All required data are there'})
     cursor = conn.cursor()
     cursor.execute("SELECT password, role FROM users WHERE email = %s", (email,))
     user_data = cursor.fetchone()
@@ -44,5 +46,6 @@ def main():
     """handle a login request"""
     if request.method == 'POST':
         return login_user()
+        # return json.dumps({'status': 200, 'message': 'Valid request method'})
     else:
         return json.dumps({'status': 405, 'message': 'Invalid request method'})

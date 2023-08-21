@@ -1,7 +1,0 @@
-|
-  {"level":"info","ts":"2023-08-19T20:17:08.017Z","caller":"otel/provider.go:50","msg":"OTEL_EXPORTER_OTLP_ENDPOINT not set, skipping Opentelemtry tracing"}
-  {"level":"info","ts":"2023-08-19T20:17:08.190Z","caller":"crd/client.go:105","msg":"Waiting for CRDs to be installed"}
-  {"level":"info","ts":"2023-08-19T20:17:08.387Z","caller":"router/router.go:214","msg":"starting router","port":8888}
-  {"level":"info","ts":"2023-08-19T20:17:08.387Z","caller":"httpserver/server.go:17","msg":"starting server","service":"router","addr":":8888"}
-  {"level":"info","ts":"2023-08-19T20:17:08.395Z","caller":"httpserver/server.go:17","msg":"starting server","service":"metrics","addr":":8080"}
-  {"level":"error","ts":"2023-08-19T20:17:08.514Z","logger":"triggerset.http_trigger_set.function_ref_resolver","caller":"router/functionReferenceResolver.go:148","msg":"function does not exists","name":"hello","namespace":"default","stacktrace":"github.com/fission/fission/pkg/router.(*functionReferenceResolver).resolveByName\n\tpkg/router/functionReferenceResolver.go:148\ngithub.com/fission/fission/pkg/router.(*functionReferenceResolver).resolve\n\tpkg/router/functionReferenceResolver.go:103\ngithub.com/fission/fission/pkg/router.(*HTTPTriggerSet).getRouter\n\tpkg/router/httpTriggers.go:146\ngithub.com/fission/fission/pkg/router.(*HTTPTriggerSet).updateRouter\n\tpkg/router/httpTriggers.go:397"}

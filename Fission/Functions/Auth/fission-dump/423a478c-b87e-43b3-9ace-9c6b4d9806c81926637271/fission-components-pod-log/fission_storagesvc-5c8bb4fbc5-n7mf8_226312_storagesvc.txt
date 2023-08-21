@@ -1,5 +1,0 @@
-|
-  {"level":"info","ts":"2023-08-19T15:53:58.974Z","caller":"otel/provider.go:50","msg":"OTEL_EXPORTER_OTLP_ENDPOINT not set, skipping Opentelemtry tracing"}
-  {"level":"info","ts":"2023-08-19T15:53:59.591Z","caller":"storagesvc/storagesvc.go:315","msg":"storage service started"}
-  {"level":"info","ts":"2023-08-19T15:53:59.795Z","logger":"storage_service","caller":"httpserver/server.go:17","msg":"starting server","service":"storagesvc","addr":":8000"}
-  {"level":"info","ts":"2023-08-19T15:53:59.714Z","caller":"httpserver/server.go:17","msg":"starting server","service":"metrics","addr":":8080"}

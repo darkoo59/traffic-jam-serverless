@@ -1,7 +1,0 @@
-|
-  {"level":"info","ts":"2023-08-19T12:56:41.146Z","caller":"otel/provider.go:50","msg":"OTEL_EXPORTER_OTLP_ENDPOINT not set, skipping Opentelemtry tracing"}
-  {"level":"info","ts":"2023-08-19T12:56:41.169Z","caller":"crd/client.go:105","msg":"Waiting for CRDs to be installed"}
-  W0819 13:06:34.969919       1 reflector.go:347] pkg/mod/k8s.io/client-go@v0.25.4/tools/cache/reflector.go:169: watch of *v1.TimeTrigger ended with: an error on the server ("unable to decode an event from the watch stream: http2: client connection lost") has prevented the request from succeeding
-  I0819 13:06:58.811906       1 trace.go:205] Trace[2114403589]: "Reflector ListAndWatch" name:pkg/mod/k8s.io/client-go@v0.25.4/tools/cache/reflector.go:169 (19-Aug-2023 13:06:39.965) (total time: 18816ms):
-  Trace[2114403589]: ---"Objects listed" error:<nil> 18545ms (13:06:58.536)
-  Trace[2114403589]: [18.816541494s] [18.816541494s] END

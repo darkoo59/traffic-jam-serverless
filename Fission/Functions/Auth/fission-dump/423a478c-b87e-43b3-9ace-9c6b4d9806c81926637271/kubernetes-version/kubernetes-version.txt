@@ -1,9 +1,0 @@
-buildDate: "2023-03-15T13:33:12Z"
-compiler: gc
-gitCommit: 9e644106593f3f4aa98f8a84b23db5fa378900bd
-gitTreeState: clean
-gitVersion: v1.26.3
-goVersion: go1.19.7
-major: "1"
-minor: "26"
-platform: linux/amd64
