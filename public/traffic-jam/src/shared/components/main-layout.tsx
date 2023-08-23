@@ -9,6 +9,9 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
   Toolbar,
   Typography,
 } from "@mui/material";
@@ -21,6 +24,7 @@ import { NavLink } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { useContext } from "react";
 import { UserContext, UserContextValue } from "../contexts/user-context";
+import { BackendContext, BackendContextValue } from "../contexts/backend-url-context";
 import Map from "../pages/map/map";
 import PeopleIcon from '@mui/icons-material/People';
 
@@ -78,6 +82,10 @@ const lowerNavItems: NavItem[] = [
 
 export const MainLayout = ({ children }: Props) => {
   const { logout, isAuth, user } = useContext<UserContextValue>(UserContext);
+  const { changeUrl, url } = useContext<BackendContextValue>(BackendContext);
+  const handleChange = (event: SelectChangeEvent) => {
+    changeUrl(event.target.value as string)
+  };
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -85,10 +93,24 @@ export const MainLayout = ({ children }: Props) => {
         position="fixed"
         sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
       >
-        <Toolbar>
-          <Typography variant="h4" noWrap component="div">
+      <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          {/* <Typography variant="h4" noWrap component="div">
             Traffic jam
-          </Typography>
+          </Typography> */}
+        </Box>
+      <Select
+      labelId="demo-simple-select-label"
+      id="demo-simple-select"
+      label="Marker type"
+      onChange={handleChange}
+      defaultValue={'OpenFaaS'}
+      sx= {{ marginLeft: '2px' }}
+    >
+      <MenuItem value={'OpenFaaS'}>OpenFaaS</MenuItem>
+      <MenuItem value={'Apache OpenWhisk'}>Apache OpenWhisk</MenuItem>
+      <MenuItem value={'Fission'}>Fission</MenuItem>
+    </Select>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -112,7 +134,7 @@ export const MainLayout = ({ children }: Props) => {
               (!item.roles || item.roles.includes(user.role)) && (
                 <NavLink to={item.route} key={item.route}>
                   <ListItem disablePadding>
-                    <ListItemButton>
+                    <ListItemButton className="menu-item">
                       <ListItemIcon>{item.icon}</ListItemIcon>
                       <ListItemText primary={item.text} />
                     </ListItemButton>
@@ -126,9 +148,9 @@ export const MainLayout = ({ children }: Props) => {
           {lowerNavItems.map(
             (item) =>
               item.requireAuth === isAuth && (
-                <NavLink to={item.route} key={item.route}>
+                <NavLink to={item.route} key={item.route} >
                   <ListItem disablePadding>
-                    <ListItemButton>
+                    <ListItemButton className="menu-item">
                       <ListItemIcon>{item.icon}</ListItemIcon>
                       <ListItemText primary={item.text} />
                     </ListItemButton>

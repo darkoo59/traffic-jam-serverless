@@ -1,6 +1,10 @@
+import logoImage from '../../../images/TrafficJam2.png';
+
 const Home = () => {
     return (
-      <h1>Home</h1>
+      <div className="center-container">
+      <img src={logoImage} alt="Logo" />
+    </div>
     )
   }
   

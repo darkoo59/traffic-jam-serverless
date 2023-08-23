@@ -1,12 +1,12 @@
 import { ThemeOptions } from "@mui/material";
 
 const mode = 'dark';
-const primary = '#e85d04';
-const background = '#03071e';
-const secondary = '#f48c06';
-const error = '#d00000';
-const textPrimary = '#fff';
-const paperBackground = '#040b2f';
+const primary = '#9148A1';
+const background = '#000000';
+const secondary = '#C46ED6';
+const error = '#590047';
+const textPrimary = '#ffffff';
+const paperBackground = '#000000';
 
 const defaultThemeOptions: ThemeOptions = {
   palette: {
@@ -28,7 +28,7 @@ const defaultThemeOptions: ThemeOptions = {
   components: {
     MuiTypography: {
       defaultProps: {
-        color: textPrimary
+        color: '#9148A1'
       }
     },
     MuiPaper: {

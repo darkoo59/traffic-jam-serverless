@@ -6,13 +6,16 @@ import { toast } from "react-toastify";
 import { Container, Grid, Box, Backdrop, CircularProgress } from "@mui/material";
 import { useCallback } from "react";
 import { environment } from "../../../environments/environment";
+import { BackendContext, BackendContextValue } from "../../contexts/backend-url-context";
+import { useContext } from "react";
 
 const Users = () => {
   const [users, setUsers] = React.useState<User[]>([]);
   const [loading, setLoading] = React.useState(true);
+  const { url } = useContext<BackendContextValue>(BackendContext);
 
   const fetchUsers = useCallback(async () => {
-    const response = await fetch(`${environment.openfaas_url}/get-users`);
+    const response = await fetch(url+'/get-users');
     const data = await response.json();
     setUsers(data.users_data);
     setLoading(false);

@@ -10,6 +10,8 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import {Backdrop, CircularProgress} from '@mui/material'
 import { environment } from "../../environments/environment";
+import { BackendContext, BackendContextValue } from "../contexts/backend-url-context";
+import { useContext } from "react";
 
 export function UserCard({
   user,
@@ -19,6 +21,7 @@ export function UserCard({
   fetchUsers: () => void;
 }) {
 
+  const { url } = useContext<BackendContextValue>(BackendContext);
   const [loading, setLoading] = useState(false);
 
   interface ErrorResponse {
@@ -28,7 +31,7 @@ export function UserCard({
   const removeUser = async (email: string | undefined) => { 
   
       setLoading(true)
-      axios.get(`${environment.openfaas_url}/delete-user?email=`+email)
+      axios.get(url+'/delete-user?email='+email)
         .then((response) => {
           // Handle successful response, if needed
           toast.success('User removed successfully');

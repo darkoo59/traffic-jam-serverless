@@ -17,12 +17,15 @@ import { DivIcon, Icon, IconOptions, LatLng, LeafletMouseEvent} from 'leaflet';
 import {MarkerIcon} from '../../models/marker'
 import { toast } from "react-toastify";
 import { environment } from '../../../environments/environment';
+import { BackendContext, BackendContextValue } from "../../contexts/backend-url-context";
+import { useContext } from "react";
 
 const Map = () => {
 
   const [selectedIcon, setSelectedIcon] = React.useState(iconTrafficJam)
   const [selectedType, setSelectedType] = React.useState('')
   const [loading, setLoading] = React.useState(true);
+  const { url } = useContext<BackendContextValue>(BackendContext);
 
   const iconMapping: Record<string, L.Icon> = {
     'Traffic jam': iconTrafficJam,
@@ -34,7 +37,7 @@ const Map = () => {
 
   const fetchMarkers = () => {
     setLoading(true)
-    fetch(`${environment.openfaas_url}/get-markers`)
+    fetch(url+'/get-markers')
       .then((response) => response.json())
       .then((data) => {
         if (data && data.markers_data) {
@@ -66,7 +69,7 @@ const Map = () => {
     };
   
 
-    axios.post(`${environment.openfaas_url}/add-marker`, requestData)
+    axios.post(url+'/add-marker', requestData)
       .then((response) => {
         // Handle successful response, if needed
         toast.success('Marker added successfully');
@@ -104,11 +107,6 @@ const Map = () => {
   }
 
   function LocationMarkers( {markerData}: LocationMarkersProps ) {
-  //   const initialMarker: MarkerIcon = {
-  //     lat: 51.505,
-  //     lng: -0.09,
-  //     icon: iconTrafficJam
-  // };
     const [markers, setMarkers] = React.useState<MarkerIcon[]>([]);
     useEffect(() => {
       if (markerData) {

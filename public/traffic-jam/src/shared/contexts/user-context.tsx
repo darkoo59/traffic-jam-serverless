@@ -1,9 +1,10 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { environment } from "../../environments/environment";
+import { BackendContext, BackendContextValue } from "../contexts/backend-url-context";
 
 const UserContext = createContext<UserContextValue | any>({});
 
@@ -24,6 +25,7 @@ const UserContextProvider = ({ children }: Props) => {
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState<any>(null);
   const [isAuth, setIsAuth] = useState(false);
+  const { url } = useContext<BackendContextValue>(BackendContext);
 
   useEffect(() => {
     const accessToken = localStorage.getItem('2w3e8oi9pjuthyf4');
@@ -40,7 +42,7 @@ const UserContextProvider = ({ children }: Props) => {
   const login = async (email: string, password: string) => {
     setLoading(true);
     try {
-      const response = await axios.post(`${environment.openfaas_url}/login`,
+      const response = await axios.post(url+'/login',
         {
           email: email,
           password: password,

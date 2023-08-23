@@ -28,6 +28,18 @@
   color: #61dafb;
 }
 
+.center-container {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  height: 80vh; /* Makes the container take the full viewport height */
+}
+
+.menu-item {
+  text-decoration: none; /* Remove the underline */
+  color: inherit; /* Use the default color (no changes) */
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

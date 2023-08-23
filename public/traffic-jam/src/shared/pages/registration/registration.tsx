@@ -5,11 +5,14 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { environment } from "../../../environments/environment";
+import { BackendContext, BackendContextValue } from "../../contexts/backend-url-context";
+import { useContext } from "react";
 
 const Register = () => {
   const [gender, setGender] = useState<string>('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { url } = useContext<BackendContextValue>(BackendContext);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -30,7 +33,7 @@ const Register = () => {
     setLoading(true);
 
     try {
-      await axios.post(`${environment.openfaas_url}/register`,
+      await axios.post(url+'/register',
         {
           firstname: data.get("firstname"),
           lastname: data.get("lastname"),
