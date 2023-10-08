@@ -1,4 +1,4 @@
-<h1 align="center" id="title">Traffic jam web application 🧑‍🎓</h1>
+<h1 align="center" id="title">Traffic jam web application 👨‍🎓👨‍🎓</h1>
 
 <h2>📚 Bachelor Thesis Project - Comparison of open source platforms for serverless computing
 <a href="https://github.com/darkoo59/traffic-jam-serverless/blob/main/Diplomski-Darko-Selakovic-final.docx" target="blank">Thesis</a>
