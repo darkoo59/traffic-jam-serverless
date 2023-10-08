@@ -1,12 +1,12 @@
 import { ThemeOptions } from "@mui/material";
 
-const mode = 'dark';
-const primary = '#9148A1';
-const background = '#000000';
-const secondary = '#C46ED6';
+const mode = 'light';
+const primary = '#b9b9b9';
+const background = '#f0f0f0 ';
+const secondary = '#b9b9b9';
 const error = '#590047';
 const textPrimary = '#ffffff';
-const paperBackground = '#000000';
+const paperBackground = '#b9b9b9';
 
 const defaultThemeOptions: ThemeOptions = {
   palette: {
