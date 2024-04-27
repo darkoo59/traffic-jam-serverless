@@ -6,11 +6,11 @@
 
 <h2>📷 Project Screenshots:</h2>
 
-<img src="https://github.com/darkoo59/traffic-jam-serverless/blob/main/Fotografije/pocetna_strana.png" alt="project-screenshot" width="1000" height="450/">
+<img src="https://github.com/darkoo59/traffic-jam-serverless/blob/main/Images/Readme-images/home-page.png" alt="project-screenshot" width="1000" height="450/">
 
-<img src="https://github.com/darkoo59/traffic-jam-serverless/blob/main/Fotografije/dashboard.png" alt="project-screenshot" width="1000" height="450/">
+<img src="https://github.com/darkoo59/traffic-jam-serverless/blob/main/Images/Readme-images/dashboard.png" alt="project-screenshot" width="1000" height="450/">
 
-<img src="https://github.com/darkoo59/traffic-jam-serverless/blob/main/Fotografije/minikube.png" alt="project-screenshot" width="1000" height="450/">
+<img src="https://github.com/darkoo59/traffic-jam-serverless/blob/main/Images/Readme-images/minikube.png" alt="project-screenshot" width="1000" height="450/">
   
   
 <h2>🧐 Features</h2>
